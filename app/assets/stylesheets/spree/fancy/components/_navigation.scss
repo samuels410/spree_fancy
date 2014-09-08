@@ -109,11 +109,11 @@
     overflow: hidden;
 
     .open-menu {
-       display: none;
+      display: none;
     }
 
     .close-menu {
-       display: block;
+      display: block;
     }
   }
 
@@ -130,9 +130,7 @@ nav#top-nav-bar {
   }
 }
 nav #main-nav-bar, nav#top-nav-bar {
-  margin-top: 40px;
   text-align: right;
-  border-bottom: none;
 
   li {
     a {

@@ -13,7 +13,7 @@ body {
 .hidden { display: none }
 
 #logo {
-  margin-top: 10px;
+//  margin-top: 10px;
 }
 
 #welcome-message {
@@ -113,6 +113,10 @@ body {
   margin-bottom: 30px;
 }
 
+ul#products {
+  max-width: 600px;
+}
+
 ul#products li {
   margin-bottom: 20px;
 
@@ -202,4 +206,25 @@ footer#footer {
 
     }
   }
+}
+figure#logo img{
+  height: 60px;
+  padding: 0;
+}
+nav #main-nav-bar{
+  border: none;
+}
+#header{
+  margin: 0;
+}
+
+.align_middle{
+  vertical-align: middle;
+}
+
+.slogan{
+  margin-left: 3%;
+  font-family: 'Lobster', cursive;
+  font-size: 21px;
+  font-weight: 400;
 }

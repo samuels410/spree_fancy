@@ -517,7 +517,7 @@ Revolution slider
     margin: 0}
 #header .header-mini-cart {
     position: relative;
-    width: 150px;
+    width: 160px;
     height: 40px;
     right: 0;
     text-align: center;
@@ -551,7 +551,7 @@ Revolution slider
 #header .header-mini-cart a:hover span {
     color: #fff}
 #header .header-mini-cart .shopping-cart-content {
-    width: 238px;
+    width: 246px;
     padding: 10px;
     margin: 5px 0 0 0;
     border: 1px solid rgba(14,14,14,.9);
@@ -2855,7 +2855,7 @@ Page Product details
 .color-scheme-dark-90 {
     background-color: rgba(0,0,0,.85)}
 
-.product-price, .price , .filter_choices,#cart-detail,#checkout-summary{
+.product-price, .price , .filter_choices,#cart-detail,#checkout-summary,.shopping-cart-content,.shopping-cart-items{
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .account-menu-item{
@@ -2869,10 +2869,14 @@ Page Product details
     margin-left: 5%;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+[data-hook="cart_listing"] {
+    margin-left: 10%;
+
+}
 #checkout-step-address{
     margin-top: 3%;
 }
-.flash.notice, .notice.errorExplanation{
+.flash.notice,.flash.error, .notice.errorExplanation{
     width: 73%;
     margin-left: 18%;
     border-radius: 4px;

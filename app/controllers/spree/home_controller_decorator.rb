@@ -9,6 +9,8 @@ Spree::HomeController.class_eval do
 
     latest = Spree::Taxon.where(:name => 'Latest').first
     @latest_products = latest.products.active.to_a.uniq if latest
+    @sample_products = Spree::Product.active.sample(7)
+
   end
 
 end

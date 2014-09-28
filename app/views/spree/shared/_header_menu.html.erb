@@ -1,0 +1,62 @@
+<div class="header-main-block2">
+<nav class="navbar yamm  navbar-main" role="navigation">
+
+<div class="container">
+<div class="navbar-header">
+  <button type="button" data-toggle="collapse" data-target="#navbar-collapse-1" class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+  <a href="<%= root_url %>" class="navbar-brand"><i class="fa fa-home"></i></a>
+</div>
+<div id="navbar-collapse-1" class="navbar-collapse collapse ">
+<ul class="nav navbar-nav">
+<!-- Classic list -->
+
+
+<% @taxonomies = Spree::Taxonomy.includes(root: :children)  %>
+  <% max_level = Spree::Config[:max_level_in_taxons_menu] || 1 %>
+
+    <% @taxonomies.each do |taxonomy| %>
+        <% cache [I18n.locale, taxonomy, max_level] do %>
+          <li class="dropdown yamm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><%= taxonomy.name %><i class="fa fa-caret-right fa-rotate-45"></i></a>
+            <ul class="dropdown-menu list-unstyled  fadeInUp animated">
+              <li>
+                <div class="yamm-content">
+                  <div class="row">
+                    <div class="header-menu">
+                      <a href="<%= nested_taxons_path(taxonomy.name.to_url) %>">
+                        <h4><%= Spree.t(:shop_by_taxonomy, :taxonomy => taxonomy.name) %></h4></a>
+
+
+
+                     <%= header_taxons_tree(taxonomy.root, @taxon, max_level) %>
+                    </div>
+
+
+                  </div>
+
+                </div>
+              </li>
+            </ul>
+          </li>
+        <% end %>
+    <% end %>
+
+
+
+
+
+
+
+  <!-- With content -->
+
+
+
+
+
+</ul>
+<ul class="nav navbar-nav navbar-right">
+  <li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+</div>
+</nav>
+</div>

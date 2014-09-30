@@ -173,7 +173,7 @@ Revolution slider
    ========================================================================== */
    
 #header.light-header .header-top-row {
-    background-color: #f5f5f5;
+    background-color: #f9f9f9;
     border-bottom: 1px solid #dcdcdc}
 #header.light-header .top-welcome p {
     color: rgba(14,14,14,.5)}
@@ -507,7 +507,7 @@ Revolution slider
 #header .navbar-main {
     margin: 0;
     border-radius: 0;
-    background-color: rgba(14,14,14,.5);
+    background-color: #00adee;
     border: 0}
 #header .header-main-fixed {
     height: 100px}
@@ -2703,12 +2703,12 @@ Page Product details
     font-family: 'PTSans',sans-serif}
 .footer-information {
     padding: 40px 0;
-    background: rgba(0,0,0,.95);
+    background: rgba(15,97,134,.95);
     font-size: 13px}
 .footer-information p {
-    color: #aaa}
+    color: #ffffff}
 .footer-information a {
-    color: #aaa;
+    color: white;
     text-transform: uppercase;
     text-decoration: none;
     line-height: 20px}
@@ -2720,18 +2720,18 @@ Page Product details
 .footer-information .footer-categories li {
     list-style-type: none}
 .social {
-    background: rgba(0,0,0,.95);
+    background: rgba(15,97,124,.95);
     padding: 40px 0 0 0}
 .social .socials {
     text-align: left}
 .social .socials a {
+    background-color: #fff;
     display: inline-block;
     width: 40px;
     height: 40px;
     text-align: center;
     margin: 20px 10px 20px 0;
     text-decoration: none;
-    color: #ccc;
     vertical-align: middle;
     -webkit-transition: all .3s ease;
     -moz-transition: all .3s ease;
@@ -2797,7 +2797,7 @@ Page Product details
     padding: 10px 0 0 10px;
     margin: 0;
     font-size: 12px;
-    color: #ccc}
+    color: #000000}
 .footer-payments {
     list-style: none;
     padding: 10px 0 0 0}
@@ -2845,7 +2845,7 @@ Page Product details
    ========================================================================== */
    
 .color-scheme-1 {
-    background-color: #0e0e0e}
+    background-color: #00adee}
 .color-scheme-2 {
     background-color: #eaeaea}
 .color-scheme-3 {
@@ -2880,4 +2880,20 @@ Page Product details
     width: 73%;
     margin-left: 18%;
     border-radius: 4px;
+}
+#quantity{
+    width: 80px;
+}
+
+[clfa-heartass="header-main-block1"]{
+    background: rgba(234,234,234,.7);
+}
+
+.news-letter{
+    border: 1px solid #00adee;
+}
+
+.sample-product-image{
+    margin-left: 7%;
+    margin-top: 10%;
 }

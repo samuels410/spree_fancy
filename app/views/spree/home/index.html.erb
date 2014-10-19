@@ -112,9 +112,13 @@
                     <figure class="figure-hover-overlay">
                       <a href="#"  class="figure-href"></a>
                       <div class="product-new">new</div>
-                      <a href="#" class="product-compare"><i class="fa fa-random"></i></a>
-                      <a href="#" class="product-wishlist"><i class="fa fa-heart-o"></i></a>
-                      <%= product_image(product,class: "img-responsive")%>
+                      <% if signed_in?  %>
+                          <%= form_for Spree::WishedProduct.new do |f| %>
+                              <%= f.hidden_field :variant_id, :value => product.master.id %>
+                              <button type="submit"  class="product-wishlist"><i class="fa fa-heart-o"></i></button>
+                          <% end %>
+                      <% end  %>
+                      <%= product_image(product,class: "img-responsive",style: "width: 253px;height: 216px;")%>
                     </figure>
                     <div class="product-caption">
                       <div class="block-name">

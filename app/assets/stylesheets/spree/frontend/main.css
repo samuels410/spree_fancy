@@ -905,7 +905,7 @@ Product style
     -webkit-backface-visibility: hidden;
     background-color: rgba(255,255,255,.9);
     width: 40px;
-    height: 40px;
+    height: 48px;
     text-align: center;
     text-decoration: none;
     vertical-align: middle;
@@ -917,7 +917,8 @@ Product style
     line-height: 40px;
     border: 1px solid rgba(235,44,51,.5);
     z-index: 103;
-    bottom: 52px;
+    /*bottom: 52px;*/
+    bottom: 0px;
     right: -100px}
 .product.light .product-wishlist:hover {
     background-color: rgba(235,44,51,.9);

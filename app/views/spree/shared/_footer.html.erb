@@ -65,11 +65,14 @@
           </div>
         </div>
         <div class="col-md-6">
-          <form class="form-horizontal">
-            <input style="border: 1px solid #00adee;-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+          <div id="newsLetterSuccess" style="display: block;color: white">Thanks for subscribing with Sathuragiri Iyarkai Angadi.
+            We will update you with great deals and offers!</div>
+          <form class="form-horizontal" id="newsLetterForm">
+            <input id="newsletter" style="border: 1px solid #00adee;-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
                     box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
                     " type="text" class="input form-control news-letter" placeholder="Email...">
             <button type="submit"> Sign up for news letter <i class="fa fa-angle-right"></i></button>
+            <div id="errorBox" ></div>
           </form>
         </div>
       </div>
@@ -166,3 +169,41 @@
     </div>
   </div>
 </footer>
+
+<script type="text/javascript" charset="utf-8">
+
+    $('#newsLetterForm').unbind('submit').submit(function(event) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        $("#errorBox").empty();
+        var target = document.getElementById('newsLetterForm');
+        var spinner = new Spinner().spin(target);
+        var contactEmail = $('#newsletter').val();
+        var data =  '&email=' + contactEmail;
+        $.ajax({
+            type: "POST",
+            url: "/news_letter",
+            data: data,
+            success: function(msg) {
+                console.log("msg");
+                $("#newsLetterForm").hide();
+                $("#newsLetterSuccess").show();
+                spinner.stop();
+                // Message was sent
+            },
+            error: function(msg) {
+                console.log(msg);
+                spinner.stop();
+                $.each(msg.responseJSON, function(index, message) {
+                    return $("<div>").html(message).appendTo($("#errorBox"));
+                });
+
+
+                $("#newsLetterSuccess").hide();
+            }
+
+        });
+        return false;
+
+    });
+</script>

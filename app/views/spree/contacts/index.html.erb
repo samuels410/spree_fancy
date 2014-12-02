@@ -1,0 +1,78 @@
+<div class="container">
+  <div class="header-for-light">
+    <h1 class="wow fadeInRight animated" data-wow-duration="1s"><span>Contact</span> Information </h1>
+  </div>
+  <div class="row">
+    <article class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+      <div class="block-form box-border wow fadeInLeft animated" data-wow-duration="1s">
+        <h3><i class="fa fa-thumb-tack"></i>Our Address</h3>
+        <p>
+          Sathuragiri Iyarkai Angadi 8/(20,21), <br/>
+          Bharathipuram, <br/>
+          Pappanaickenpalayam,<br/>
+          Near Prasanna Honda Service Center Avinashi Road,<br/>
+          Coimbatore - 641 037
+        </p>
+        <hr>
+        <h3><i class="fa fa-envelope-o"></i>Send Message</h3>
+        <ul>
+        <% @contact.errors.each do |attr, msg| %>
+            <li><%=msg  %></li>
+        <% end %>
+        </ul>
+        <form method="post" action="/contacts">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="inputFirstName" class="control-label">Name:<span class="text-error">*</span></label>
+                <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+                <div>
+                  <input required="true" class="string required form-control" id="contact_name" name="contact[name]"  type="text">
+                </div>
+              </div>
+
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="inputLastName" class="control-label">Email:<span class="text-error">*</span></label>
+                <div>
+                  <input required="true" class="string required form-control" id="contact_email" name="contact[email]"  type="email">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="inputSubject" class="control-label">Subject:<span class="text-error">*</span></label>
+                <div>
+                  <input required="true" class="string required form-control" id="contact_subject" name="contact[subject]"  type="text">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="inputText" class="control-label">Message:<span class="text-error">*</span></label>
+                <div>
+                  <textarea required="true" class="text  form-control" id="contact_message" name="contact[message]"  ></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <input type="submit" class="btn-default-1" value="Submit">
+        </form>
+      </div>
+    </article>
+    <article class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+      <div class="block-form box-border wow fadeInRight animated" data-wow-duration="1s">
+        <h3> <i class="fa fa-adn"></i>Map</h3>
+        <hr>
+        <div class="google-map">
+
+          <iframe src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d7832.684090735684!2d76.98406283341589!3d11.012943028554549!3m2!1i1024!2i768!4f13.1!2m1!1sLakshmi+Mills%2C+Avinashi+Road%2C+P+N+Palayam%2C+Coimbatore%2C+Tamil+Nadu!5e0!3m2!1sen!2sin!4v1416721999194" style="overflow:hidden;height:100%;width:100%;" frameborder="0" ></iframe>
+        </div>
+
+      </div>
+    </article>
+
+  </div>
+</div>
